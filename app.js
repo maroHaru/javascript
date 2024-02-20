@@ -83,11 +83,16 @@
 
 let user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んでください。');
 
-alert('あなたの選んだ手は' + user_hand + 'です。');
+let js_hand = getJShand();
+
+let judge = winLose(user_hand, js_hand);
+
+alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。');
 
 
 function getJShand(){
   let js_hand_num = Math.floor( Math.random() * 3 );
+  let hand_name;
 
   if(js_hand_num == 0){
     js_hand = "グー";
